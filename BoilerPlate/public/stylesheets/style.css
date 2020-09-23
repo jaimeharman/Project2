@@ -1,3 +1,108 @@
+#nav-bar {
+  background-color: #800000;
+  color: white;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  color: #0c0c0c;
+}
+
+#main-title {
+  font-family: papyrus;
+  font-weight: bolder;
+}
+
+#start {
+  margin-top: 3%;
+  background-color: teal;
+}
+
+.material-icons {
+  padding: 10px;
+  font-size: 3rem;
+}
+
+.titles {
+  margin-bottom: 3rem;
+}
+
+.park-list {
+  padding-bottom: 2px;
+  margin: 3px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: teal;
+}
+
+#state-activities {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#state-activities > .activity-list {
+  margin: 3px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid teal;
+  color: teal;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+#park-description {
+  /* font-weight: bold; */
+  font-size: 20px;
+}
+
+#directions {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.park-list:hover {
+  background-color: #00b3b3;
+}
+
+#description {
+  color: white;
+}
+
+.pic-txt {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(7, 68, 40, 0.65);
+  border-radius: 15px;
+  line-height: 2.5rem;
+  font-family: papyrus;
+  display: inline;
+}
+.carousel-item {
+  display: flex;
+}
+
+.page-footer {
+  background-color: #800000;
+}
+
+#map {
+  width: 50%;
+  height: 400px;
+}
+
+@media (max-width: 750px) {
+  #map {
+    width: 100%;
+  }
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
