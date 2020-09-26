@@ -10,12 +10,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper z-depth-4" id="nav-bar">
+        <li class="divider"></li>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Main Menu</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">Account Login</a></li>
+          <li><a href="#!">Plan a Trip</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">View Current Trip</a></li>
+        </ul>
+        <span id="logo-container" class="brand-logo"> <i class="material-icons"
+                style="font-size: 3rem;">landscape</i></span>
+        <h5 class="right" style="margin-right: 2rem;">RoamForth</h5>
     </div>
-  </nav>
+</nav>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
