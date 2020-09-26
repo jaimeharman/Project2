@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RoamForth</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <title>Signup</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link href="./stylesheets/style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +24,6 @@
         <ul id='dropdown1' class='dropdown-content'>
           <li><a href="#!">Account Login</a></li>
           <li><a href="#!">Plan a Trip</a></li>
-          <li class="divider" tabindex="-1"></li>
           <li><a href="#!">View Current Trip</a></li>
         </ul>
         <span id="logo-container" class="brand-logo"> <i class="material-icons"
@@ -38,7 +41,7 @@
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">Create Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">
@@ -53,9 +56,49 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
+  <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Team Bio</h5>
+                <p class="grey-text text-lighten-4">We build things in the pixel aether.</p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Team Members</h5>
+                <ul>
+                    <li><a class="white-text">Jaime</a></li>
+                    <li><a class="white-text">Danny</a></li>
+                    <li><a class="white-text">Oscar</a></li>
+                    <li><a class="white-text">Jeremiah</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="https://github.com/jaimeharman">GitHub</a></li>
+                    <li><a class="white-text" href="https://github.com/ddsteig">GitHub</a></li>
+                    <li><a class="white-text" href="https://github.com/oscaroses">GitHub</a></li>
+                    <li><a class="white-text" href="https://github.com/06jeremiah">GitHub</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<script src="./js/script.js"></script>
+
+
 
 </body>
-
 </html>
