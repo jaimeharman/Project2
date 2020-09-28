@@ -90,6 +90,7 @@
 
 .page-footer {
   background-color: #800000;
+  width: 100%; 
 }
 
 #map {

@@ -128,8 +128,13 @@ $(document).ready(() => {
         let parkLink = $("<a>");
         parkLink.attr("class", "btn");
         parkLink.attr("href", response.data[stateInfo].url);
+        parkLink.attr("target", "_blank")
         parkLink.text("Visit Park Page");
         $("#state-link").append(parkLink);
+      //Adds trip button
+        const tripBtn = `<a class="btn" style="margin-top: 20px;">Add to Trip</a>` 
+        //Add href to correct route
+        $("#state-addTrip").append(tripBtn) 
 
         // Conditional for directions, if there is none it redirects user to visit park page,
         // Else it loads directions, and a link to their directions page

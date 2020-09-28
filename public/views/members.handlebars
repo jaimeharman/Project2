@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trip Planner</title>
+
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <link href="../stylesheets/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper z-depth-4" id="nav-bar">
+      <li class="divider"></li>
+      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Main Menu</a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="login">Account Login</a></li>
+        <li><a href="members">Plan a Trip</a></li>
+        <li><a href="members">View Current Trip</a></li>
+      </ul>
+      <span id="logo-container" class="brand-logo"> <i class="material-icons"
+          style="font-size: 3rem;">landscape</i></span>
+      <h5 class="right" style="margin-right: 2rem;">RoamForth</h5>
+    </div>
+  </nav>
+
+  <div style="border: 0; margin: 0;">
+    <div id="map" style="width: 100%; height: 530px;"></div>
+
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Welcome User!</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">View, Edit and Save your Road Trip Plans!</h5>
+        </div>
+
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">location_on</i>First</div>
+            <div class="collapsible-body">
+              <div>Lorem ipsum dolor sit amet.</div>
+              <a class="waves-effect waves-light btn-small">Remove</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">location_on</i>Second</div>
+            <div class="collapsible-body">
+              <div>Lorem ipsum dolor sit amet.</div>
+              <a class="waves-effect waves-light btn-small">Remove</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">location_on</i>Third</div>
+            <div class="collapsible-body">
+              <div>Lorem ipsum dolor sit amet.</div>
+              <a class="waves-effect waves-light btn-small">Remove</a>
+          </li>
+        </ul>
+      </div>
+      <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col 16 s12">
+              <h5 class="white-text">Team Bio</h5>
+              <p class="grey-text text-lighten-4">We build things in the pixel aether.</p>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Team Members</h5>
+              <ul>
+                <li><a class="white-text">Jaime</a></li>
+                <li><a class="white-text">Danny</a></li>
+                <li><a class="white-text">Oscar</a></li>
+                <li><a class="white-text">Jeremiah</a></li>
+              </ul>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Connect</h5>
+              <ul>
+                <li><a class="white-text" href="https://github.com/jaimeharman">GitHub</a></li>
+                <li><a class="white-text" href="https://github.com/ddsteig">GitHub</a></li>
+                <li><a class="white-text" href="https://github.com/oscaroses">GitHub</a></li>
+                <li><a class="white-text" href="https://github.com/06jeremiah">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+          </div>
+        </div>
+      </footer>
+
+
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+      <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+      <script src="../js/script.js"></script>
+</body>
+
+</html>
