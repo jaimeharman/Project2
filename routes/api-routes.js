@@ -19,9 +19,6 @@ module.exports = function (app) {
       lat: req.body.lat,
       lon: req.body.lon
     })
-      .then(() => {
-        res.redirect(307, "/api/members");
-      })
       .catch(err => {
         res.status(401).json(err);
       });
