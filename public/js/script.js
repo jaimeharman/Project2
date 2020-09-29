@@ -60,7 +60,6 @@ $(document).ready(() => {
       // Generate park description, page link, images, activities, directions, directions link,
 
       function loadstateInfo(stateInfo) {
-        console.log(stateInfo);
         $("#state-activities").empty();
         $("#state-link").empty();
         $("#state-addTrip").empty();
@@ -150,7 +149,7 @@ $(document).ready(() => {
         lonInput.attr("id", "lonInfo")
         lonInput.attr("value", lon)
 
-        const tripBtn = `<a class="btn" style="margin-top: 20px;">Add to Trip</a>`
+        const tripBtn = `<button type="submit" class="btn btn-default">Add to Trip</button>`
 
         //Add href to correct route
         $("#state-addTrip").append(latInput, lonInput, tripBtn)

@@ -14,6 +14,20 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/trip", (req, res) => {
+    db.Trip.create({
+      lat: req.body.lat,
+      lon: req.body.lon
+    })
+      .then(() => {
+        res.redirect(307, "/api/members");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
