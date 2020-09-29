@@ -20,6 +20,9 @@
 =======
     "express": "^4.17.0",
     "express-handlebars": "^5.1.0",
+<<<<<<< HEAD
+>>>>>>> a0d39c0de20394f6450cfe676b9f69913fdecaae
+=======
 >>>>>>> a0d39c0de20394f6450cfe676b9f69913fdecaae
     "express-session": "^1.16.1",
     "handlebars": "^4.7.6",
