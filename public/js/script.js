@@ -46,7 +46,6 @@ $(document).ready(() => {
       method: "GET",
     }).then(function (response) {
       $("#state-list").empty();
-      console.log(response);
       for (i = 0; i < response.data.length; i++) {
         statebutton = $("<button>");
         statebutton.attr("data-state", i);
