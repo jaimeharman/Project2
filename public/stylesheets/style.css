@@ -88,14 +88,12 @@
   display: flex;
 }
 
-
 .page-footer {
   background-color: #800000;
   width: 100%; 
-  heigh: 120vh; 
+  margin-top: 220px;
+  position: relative;
 }
-
-
 
 
 #map {
