@@ -60,8 +60,10 @@ $(document).ready(() => {
       // Generate park description, page link, images, activities, directions, directions link,
 
       function loadstateInfo(stateInfo) {
+        console.log(stateInfo);
         $("#state-activities").empty();
         $("#state-link").empty();
+        $("#state-addTrip").empty();
         $("#state-pics").empty();
         $("#directions").empty();
         $("#park-description").text(response.data[stateInfo].description);
@@ -131,10 +133,27 @@ $(document).ready(() => {
         parkLink.attr("target", "_blank")
         parkLink.text("Visit Park Page");
         $("#state-link").append(parkLink);
-      //Adds trip button
-        const tripBtn = `<a class="btn" style="margin-top: 20px;">Add to Trip</a>` 
+
+        //Adds lat and lon to form, button sends to mysql
+        let lat = response.data[stateInfo].latitude;
+        let lon = response.data[stateInfo].longitude;
+
+        let latInput = $("<input>");
+        latInput.attr("type", "hidden");
+        latInput.attr("class", "form-control")
+        latInput.attr("id", "latInfo")
+        latInput.attr("value", lat)
+
+        let lonInput = $("<input>");
+        lonInput.attr("type", "hidden");
+        lonInput.attr("class", "form-control")
+        lonInput.attr("id", "lonInfo")
+        lonInput.attr("value", lon)
+
+        const tripBtn = `<a class="btn" style="margin-top: 20px;">Add to Trip</a>`
+
         //Add href to correct route
-        $("#state-addTrip").append(tripBtn) 
+        $("#state-addTrip").append(latInput, lonInput, tripBtn)
 
         // Conditional for directions, if there is none it redirects user to visit park page,
         // Else it loads directions, and a link to their directions page
