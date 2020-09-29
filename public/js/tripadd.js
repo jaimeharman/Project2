@@ -1,13 +1,11 @@
 const addtoTrip = $("form.trip");
-const latInput = $("input#latInfo");
-const lonInput = $("input#lonInfo");
 
 // When the trip button is clicked, we validate the lat and lon are not blank
 addtoTrip.on("submit", event => {
     event.preventDefault();
     const userData = {
-        lat: latInput.val(),
-        lon: lonInput.val()
+        lat: $("input#latInfo").val(),
+        lon: $("input#lonInfo").val()
     };
 
     if (!userData.lat || !userData.lon) {
@@ -15,8 +13,8 @@ addtoTrip.on("submit", event => {
     }
     // If we have an lat and lon, run the tripAdd function
     tripAdd(userData.lat, userData.lon);
-    latInput.val("");
-    lonInput.val("");
+    $("input#latInfo").val("");
+    $("input#lonInfo").val("");
 });
 
 // Does a post to the trip route. If successful, we are redirected to the members page
@@ -27,8 +25,7 @@ function tripAdd(lat, lon) {
         lon: lon
     })
         .then(() => {
-            window.location.replace("/members");
-            // If there's an error, handle it by throwing up a bootstrap alert
+            console.log("added to trip");
         })
         .catch(handleLoginErr);
 }
