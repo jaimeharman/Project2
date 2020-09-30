@@ -61,4 +61,10 @@ module.exports = function (app) {
       });
     }
   });
+
+  app.get("/api/trip", function (req, res) {
+    db.Trip.findAll({}).then(function (dbTrip) {
+      res.json(dbTrip);
+    });
+  });
 };
