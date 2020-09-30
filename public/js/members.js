@@ -1,5 +1,10 @@
+let fullTrip = []
+
+
+
+
 window.onload = function () {
-  
+
 }
 
 function getMapData() {
@@ -31,5 +36,12 @@ $(document).ready(() => {
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
   });
-  
+
+  $.get("/api/trip").then(data => {
+    console.log(data[0].lat, data[0].lon);
+    for (let i = 0; i < data.length; i++) {
+      fullTrip.push({ lat: data[i].lat, lon: data[i].lon })
+    }
+    console.log(fullTrip);
+  })
 });
