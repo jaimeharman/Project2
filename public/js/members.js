@@ -56,7 +56,17 @@ $(document).ready(() => {
   $.get("/api/trip").then(data => {
     console.log(data[0].lat, data[0].lon);
     for (let i = 0; i < data.length; i++) {
+      let ulTrip = $("#ulTrip")
+      let liTrip = `<li>
+      <div class="collapsible-header"><i class="material-icons">location_on</i>Location:${i + 1}</div>
+      <div class="collapsible-body">
+        <div>${data[i].fullName}</div>
+        <a class="waves-effect waves-light btn-small" value="${data[i].id}">Remove</a>
+      </div>
+    </li>`;
+      ulTrip.append(liTrip)
       fullTrip.push(data[i].lat + "," + data[i].lon)
+
     }
     console.log(fullTrip);
     loadmap()

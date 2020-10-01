@@ -11,7 +11,14 @@ module.exports = function (sequelize, DataTypes) {
         fullName: {
             type: DataTypes.STRING(80),
             allowNull: false
+        },
+    },
+        {
+            freezTableName: true,
         }
-    })
+    );
+    Trip.associate = function (models) {
+        Trip.belongsTo(models.User)
+    }
     return Trip;
 };
