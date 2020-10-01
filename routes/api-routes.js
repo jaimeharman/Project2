@@ -17,7 +17,8 @@ module.exports = function (app) {
   app.post("/api/trip", (req, res) => {
     db.Trip.create({
       lat: req.body.lat,
-      lon: req.body.lon
+      lon: req.body.lon,
+      fullName: req.body.fullName
     })
       .catch(err => {
         res.status(401).json(err);

@@ -135,6 +135,7 @@ $(document).ready(() => {
         //Adds lat and lon to form, button sends to mysql
         let lat = response.data[stateInfo].latitude;
         let lon = response.data[stateInfo].longitude;
+        let fullName = response.data[stateInfo].fullName;
 
         let latInput = $("<input>");
         latInput.attr("type", "hidden");
@@ -148,10 +149,16 @@ $(document).ready(() => {
         lonInput.attr("id", "lonInfo")
         lonInput.attr("value", lon)
 
+        let nameInput = $("<input>");
+        nameInput.attr("type", "hidden");
+        nameInput.attr("class", "form-control")
+        nameInput.attr("id", "nameInfo")
+        nameInput.attr("value", fullName)
+
         const tripBtn = `<button type="submit" class="btn btn-default">Add to Trip</button>`
 
         //Add href to correct route
-        $("#state-addTrip").append(latInput, lonInput, tripBtn)
+        $("#state-addTrip").append(latInput, lonInput, nameInput, tripBtn)
 
         // Conditional for directions, if there is none it redirects user to visit park page,
         // Else it loads directions, and a link to their directions page

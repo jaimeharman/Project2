@@ -7,6 +7,10 @@ module.exports = function (sequelize, DataTypes) {
         lon: {
             type: DataTypes.DECIMAL(11, 8),
             allowNull: false
+        },
+        fullName: {
+            type: DataTypes.STRING(80),
+            allowNull: false
         }
     })
     return Trip;

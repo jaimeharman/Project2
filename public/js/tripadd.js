@@ -5,25 +5,28 @@ addtoTrip.on("submit", event => {
     event.preventDefault();
     const userData = {
         lat: $("input#latInfo").val(),
-        lon: $("input#lonInfo").val()
+        lon: $("input#lonInfo").val(),
+        fullName: $("input#nameInfo").val()
     };
-
-    if (!userData.lat || !userData.lon) {
+    console.log(userData);
+    if (!userData.lat || !userData.lon || !userData.fullName) {
         return;
     }
 
     // If we have an lat and lon, run the tripAdd function
-    tripAdd(userData.lat, userData.lon);
+    tripAdd(userData.lat, userData.lon, userData.fullName);
     $("input#latInfo").val("");
     $("input#lonInfo").val("");
+    $("input#nameInfo").val("");
 });
 
 // Does a post to the trip route. If successful, we are redirected to the members page
 // Otherwise we log any errors
-function tripAdd(lat, lon) {
+function tripAdd(lat, lon, fullName) {
     $.post("/api/trip", {
         lat: lat,
-        lon: lon
+        lon: lon,
+        fullName: fullName
     })
         .then(() => {
             console.log("added to trip");
