@@ -30,13 +30,15 @@ function loadmap() {
 
 
 $(document).ready(() => {
+  let userID;
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
+    let userID = data.users_id
     $(".taco").text("Welcome " + data.email);
   });
 
-  $.get("/api/trip").then(data => {
+  $.get("/api/trip?users_id=${userID}").then(data => {
     for (let i = 0; i < data.length; i++) {
       let ulTrip = $("#ulTrip")
       let liTrip = `<li>

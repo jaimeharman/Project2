@@ -18,7 +18,8 @@ module.exports = function (app) {
     db.Trip.create({
       lat: req.body.lat,
       lon: req.body.lon,
-      fullName: req.body.fullName
+      fullName: req.body.fullName,
+      UserId: req.user.id
     })
       .catch(err => {
         res.status(401).json(err);
@@ -73,7 +74,14 @@ module.exports = function (app) {
   });
 
   app.get("/api/trip", function (req, res) {
-    db.Trip.findAll({}).then(function (dbTrip) {
+    let query = {};
+    if (req.query.users_id) {
+      query.UserId - req.query.users_id;
+    }
+    db.Trip.findAll({
+      where: query,
+      include: [db.User]
+    }).then(function (dbTrip) {
       res.json(dbTrip);
     });
   });
