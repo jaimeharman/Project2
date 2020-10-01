@@ -63,6 +63,15 @@ module.exports = function (app) {
     }
   });
 
+  app.delete("/api/trip/:id", function (req, res) {
+    // Delete the trip with the id available to us in req.params.id
+    db.Trip.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+  });
+
   app.get("/api/trip", function (req, res) {
     db.Trip.findAll({}).then(function (dbTrip) {
       res.json(dbTrip);
