@@ -3,6 +3,7 @@ const addtoTrip = $("form.trip");
 // When the trip button is clicked, we validate the lat and lon are not blank
 addtoTrip.on("submit", event => {
     event.preventDefault();
+    alert("Trip Added");
     const userData = {
         lat: $("input#latInfo").val(),
         lon: $("input#lonInfo").val(),
