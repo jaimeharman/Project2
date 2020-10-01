@@ -50,7 +50,7 @@ $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
+    $(".taco").text("Welcome " + data.email);
   });
 
   $.get("/api/trip").then(data => {
@@ -60,12 +60,29 @@ $(document).ready(() => {
       <div class="collapsible-header"><i class="material-icons">location_on</i>Location:${i + 1}</div>
       <div class="collapsible-body">
         <div>${data[i].fullName}</div>
-        <a class="waves-effect waves-light btn-small" id="deleteTrip" value="${data[i].id}">Remove</a>
+        <a class="waves-effect waves-light btn-small deleteTrip" data-value="${data[i].id}">Remove</a>
       </div>
     </li>`;
       ulTrip.append(liTrip)
       fullTrip.push(data[i].lat + "," + data[i].lon)
     }
-    loadmap()
+    loadmap();
+
+    $(".deleteTrip").on("click", function () {
+      const id = $(this).data("value")
+      deleteTrip(id)
+    })
   })
+
+  function deleteTrip(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/trip/" + id
+    })
+    location.reload()
+  }
+
 });
+
+
+
