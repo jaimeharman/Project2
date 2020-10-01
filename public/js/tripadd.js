@@ -11,6 +11,7 @@ addtoTrip.on("submit", event => {
     if (!userData.lat || !userData.lon) {
         return;
     }
+
     // If we have an lat and lon, run the tripAdd function
     tripAdd(userData.lat, userData.lon);
     $("input#latInfo").val("");
